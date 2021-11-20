@@ -1,0 +1,3 @@
+[console_scripts]
+work_start = work_time:main
+
