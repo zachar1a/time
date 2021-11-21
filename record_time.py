@@ -44,3 +44,19 @@ class record:
         res = curr.execute(command).fetchall()
         for r in res:
             print(r)
+
+    def returnHoursWorkedInWeek(self, _month: int, _day: int):
+        # TODO
+        # need to figure out a way that I can
+        # find when the begining of the week was based
+        # on what the date that is entered in
+        #
+        # ex. today is 11-20-21
+        # if the date entered in is 11-23-21
+        # how will I know that 11-23 is not monday
+        # but is tuesday and I need to include monday?
+        curr = self.con.cursor()
+        command = 'SELECT * FROM time WHERE' \
+                  '(month={0} )' \
+                  'and day={1}'.format(_month, _day)
+        res = curr.execute(command).fetchall()
